@@ -24,7 +24,7 @@ const storage = multer.diskStorage({destination: 'api/uploads/', filename: filen
 const upload = multer({fileFilter: fileFilter, storage: storage});
 
 
-router.post('upload', upload.single('photo'), (req, res) => {
+router.post('/upload', upload.single('photo'), (req, res) => {
     if(req.fileValidationError) {
         res.status(400).json({error: req.fileValidationError});
     }
