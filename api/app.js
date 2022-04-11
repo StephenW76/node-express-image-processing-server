@@ -1,6 +1,8 @@
 const express = require('express');
 const { sendFile } = require('express/lib/response');
 const path = require('path');
+const router = require('./src/router');
+
 
 const app = express();
 
@@ -10,6 +12,6 @@ app.use('/*', (req, res) => {
     res.sendFile(pathToIndex);
 })
 
-
+app.use("/", router);
 
 module.exports = app;
