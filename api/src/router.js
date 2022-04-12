@@ -33,7 +33,7 @@ router.post('/upload', upload.single('photo'), async (req, res) => {
         res.status(400).json({error: req.fileValidationError});
     }
     else {
-        res.status(201).json({success: true});
+        
         try {
             await imageProcessor(req.file.filename);
         }
@@ -42,6 +42,7 @@ router.post('/upload', upload.single('photo'), async (req, res) => {
         }
 
     }
+    res.status(201).json({success: true});
     
 
 })
