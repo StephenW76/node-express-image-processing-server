@@ -68,4 +68,4 @@ function imageProcessor(filename) {
     });
 };
 
-module.exports(imageProcessor)
+module.exports = imageProcessor;
