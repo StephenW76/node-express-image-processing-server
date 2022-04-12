@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const path = require('path');
-const {worker, isMainThread} = require("worker_threads");
+const {Worker, isMainThread} = require("worker_threads");
 
 const pathToResizeWorker = path.resolve(__dirname, 'resizeWorker.js');
 const pathToMonochromeWorker = path.resolve(__dirname, 'monochromeWorker.js');
